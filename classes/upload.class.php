@@ -2,6 +2,21 @@
 
 class Upload {
 
+
+
+public function scanDirectory(){
+
+$directory = './'; // this is current directory where is scandir.php file exists
+
+$files = scandir( $directory , SCANDIR_SORT_DESCENDING );
+echo '<pre>';
+
+var_dump($files );
+
+echo '</pre>';
+}// scanDirectory
+
+
 public function checkIfFileExists( $fileName){
 
 if( file_exists($fileName)){
