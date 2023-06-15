@@ -2,9 +2,19 @@
 
 class Upload {
 
+public function checkIfFileExists( $fileName){
+
+if( file_exists($fileName)){
+	echo 'The file <h5>' . $fileName . ' </h5> exists.';
+} else {
+	echo 'The file <h5>' . $fileName . ' </h5> do not exists.';
+}
+
+}// checkIfFileExists
+
+
+
 public function  checkDirectory($name){
-
-
 
 $check = is_dir( $name );
 if( !$check ){
