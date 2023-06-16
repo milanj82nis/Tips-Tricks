@@ -2,6 +2,18 @@
 
 class Upload {
 
+
+
+public function deleteDirectory($directoryName){
+
+
+	rmdir($directoryName);
+echo 'Directory <h4> ' . $directoryName . '</h4> is deleted.';
+header('Refresh:4;URL=rmdir.php');
+}// deleteDirectory
+
+
+
 public function  unlinkFile( $fileName ){
 
 
