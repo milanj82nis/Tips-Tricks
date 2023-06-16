@@ -2,7 +2,14 @@
 
 class Upload {
 
+public function  unlinkFile( $fileName ){
 
+
+unlink( $fileName);
+echo 'File <h5> ' . $fileName . ' </h5> is unlinked ( deleted). ';
+header('Refresh:4;URL=unlink.php');
+
+}// unlinkFile
 
 public function scanDirectory(){
 
