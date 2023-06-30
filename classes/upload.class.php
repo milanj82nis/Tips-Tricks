@@ -3,6 +3,52 @@
 class Upload {
 
 
+public function  checkIsFileWritableOrNot( $fileName ){
+
+if( is_writable($fileName)){
+	echo ' File <strong> ' . $fileName. ' </strong> is writable';
+} else {
+		echo ' File <strong> ' . $fileName. ' </strong> is not  writable';
+
+}
+
+
+
+}//  checkIsFileWritableOrNot( $fileName )
+
+
+public function changeFileDirectoryName( $oldName , $newName ){
+
+
+if( !rename ( $oldName , $newName )){
+header('Refresh:4;URL=rename.php');
+echo 'File / Directory name can not be changed';
+
+
+} else {
+
+header('Refresh:10;URL=rename.php');
+echo 'File / Directory :  ' . $oldName . ' is changed to ' . $newName     ;
+
+}
+
+
+}// changeFileDirectoryName
+
+
+
+public function getAllFilesAndDirectories(){
+
+$directory = './'; // this is current directory where is scandir.php file exists
+
+$files = scandir( $directory , SCANDIR_SORT_DESCENDING );
+
+return $files;
+
+}// getAllFilesAndDirectories
+
+
+
 
 public function deleteDirectory($directoryName){
 
