@@ -3,7 +3,25 @@
 class Upload {
 
 
+public function getFileSize( $fileName ){
+
+echo 'File <strong>' . $fileName . '</strong> have ' . filesize($fileName ) . ' bytes';;
+
+}// getFileSize
+
+
+
+public function  readFileContent( $fileName ){
+
+
+readfile( $fileName);
+
+
+}// readFileContent
+
+
 public function  checkIsFileWritableOrNot( $fileName ){
+
 
 if( is_writable($fileName)){
 	echo ' File <strong> ' . $fileName. ' </strong> is writable';
