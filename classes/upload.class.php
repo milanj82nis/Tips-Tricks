@@ -3,9 +3,75 @@
 class Upload {
 
 
+public function  insertNewContentInFile( $fileName , $newContent ){
+
+if( file_put_contents( $fileName , $newContent )){
+
+echo 'In file <strong>' . $fileName . ' </strong> is inserted new content using file_put_contents php function. ';
+header('Refresh:10;URL=file_put_contents.php');
+
+} else {
+echo 'In file <strong>' . $fileName . ' </strong> is not inserted new content using file_put_contents php function. ';
+header('Refresh:10;URL=file_put_contents.php');
+
+
+}
+
+
+}//  insertNewContentInFile( $fileName , $newContent )
+
+
+
+public function checkIsFileReadableOrNot($fileName ){
+
+if( is_readable($fileName)){
+	echo 'File <strong> ' . $fileName . ' </strong> is readable.' ;
+} else {
+		echo 'File <strong> ' . $fileName . ' </strong> is not readable.' ;
+
+}
+
+}// checkIsFileReadableOrNot
+
+
+public function  checkIsFileOrNot( $fileName ){
+
+
+if( is_file($fileName )){
+
+	echo  '<strong>' . $fileName . '</strong> is file';
+} else {
+		echo  '<strong>' . $fileName . '</strong> is not file';
+
+}
+
+
+}// checkIsFileOrNot
+
+
+
+
+public function checkIsFileExecutable($fileName){
+
+
+if( is_executable($fileName )){
+	echo 'File <strong> ' . $fileName . ' </strong> is executable.';
+} else {
+		echo 'File <strong> ' . $fileName . ' </strong> is not executable.';
+
+}
+
+
+
+}// checkIsFileExecutable
+
+
+
 public function getFileSize( $fileName ){
 
+
 echo 'File <strong>' . $fileName . '</strong> have ' . filesize($fileName ) . ' bytes';;
+
 
 }// getFileSize
 
