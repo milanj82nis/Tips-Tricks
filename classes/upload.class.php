@@ -3,6 +3,25 @@
 class Upload {
 
 
+
+public function  getRealFilePath( $fileName ){
+
+
+echo 'File <strong>' . $fileName . '</strong> is located in : <strong> '. realpath($fileName ) . '</strong>';
+
+
+}// getRealFilePath
+
+
+public function  getFileContentAsString( $fileName ){
+
+$fileConent = file_get_contents($fileName);
+echo $fileConent;
+
+
+
+}// getFileContentAsString
+
 public function  insertNewContentInFile( $fileName , $newContent ){
 
 if( file_put_contents( $fileName , $newContent )){
@@ -68,6 +87,8 @@ if( is_executable($fileName )){
 
 
 public function getFileSize( $fileName ){
+
+
 
 
 echo 'File <strong>' . $fileName . '</strong> have ' . filesize($fileName ) . ' bytes';;
