@@ -2,6 +2,37 @@
 
 class Upload {
 
+public function readFileASArray( $fileName ){
+
+
+$array = file($fileName);
+
+foreach ( $array as $array_num => $line ){
+
+echo 'Line #<strong>' . $array_num . '</strong> : ' . htmlspecialchars( $line ). ' <br>';
+}// foreach
+
+
+
+
+}// readFileAsArray
+
+
+public function  copyToFile( $copyFromFile , $copyToFile ){
+
+
+if( !copy($copyFromFile , $copyToFile )){
+	echo 'Error while copy file <strong>' .$copyFromFile . '</strong> to file <strong> ' . $copyToFile  . '</strong>.';
+} else {
+	echo 'File <strong> ' . $copyFromFile. ' </strong> is copied to file <strong>' . $copyToFile. '</strong>';
+}
+
+
+
+
+}// copyToFile
+
+
 
 
 public function  getRealFilePath( $fileName ){
@@ -87,9 +118,6 @@ if( is_executable($fileName )){
 
 
 public function getFileSize( $fileName ){
-
-
-
 
 echo 'File <strong>' . $fileName . '</strong> have ' . filesize($fileName ) . ' bytes';;
 
